@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Shreya 🙂</title>
+    <style>
+        body {
+            background-color: #f8e1e1;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            color: #fff;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 50px;
+            color: #ff7f7f;
+            animation: bounce 1s infinite alternate;
+        }
+
+        p {
+            font-size: 24px;
+            color: #f3a1c5;
+        }
+
+        .balloon {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 50px;
+            height: 80px;
+            background-color: #ff99cc;
+            border-radius: 50%;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .balloon:nth-child(2) {
+            background-color: #ff66b3;
+            animation-delay: 0.5s;
+        }
+
+        .balloon:nth-child(3) {
+            background-color: #ff3399;
+            animation-delay: 1s;
+        }
+
+        .balloon:nth-child(4) {
+            background-color: #ff1a66;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-200px);
+            }
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="greeting"></h1>
+        <p>Wishing you all the happiness in the world today and always!</p>
+    </div>
+
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+
+    <script>
+        // Get today's date and personalize the greeting message
+        const today = new Date();
+        const hours = today.getHours();
+        const greetingElement = document.getElementById('greeting');
+
+        let greetingMessage = "Happy Birthday Shreya 🙂"
+
+        if (hours >= 5 && hours < 12) {
+            greetingMessage = "Good Morning, Happy Birthday Shreya 🙂";
+        } else if (hours >= 12 && hours < 18) {
+            greetingMessage = "Good Afternoon, Happy Birthday Shreya 🙂";
+        } else if (hours >= 18 || hours < 5) {
+            greetingMessage = "Good Evening, Happy Birthday Shreya 🙂";
+        }
+
+        // Set the greeting text
+        greetingElement.textContent = greetingMessage;
+    </script>
+</body>
+</html>
